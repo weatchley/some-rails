@@ -1,0 +1,62 @@
+            <div data-role="content">
+
+  <!--h1><span>Login Form</span></h1-->
+    <div align=center style="color:red;">
+      <% if flash[:notice] %>
+          <div class="notice_box">
+            <ul>
+              <li>
+                <%= flash[:notice] %>
+              </li>
+            </ul>
+          </div>
+      <% end %>
+    </div>
+
+  <form id="login" action="<%= "/login" %>" method="post">
+  <%= fields_for(:login, @login) do |f| %>
+    <fieldset>
+      <%#= token_tag %>
+      <%#= f.hidden_field :redirect_url %>
+      <%= f.hidden_field :company_id %>
+        <p align=center>
+          <%= f.label :username %>
+          <%= f.text_field :username %><br>
+        </p>
+        <p align=center>
+          <%= f.label :password %>
+          <%= f.password_field :password %><br>
+        </p>
+        <p align=center>
+          <%= submit_tag "Login" %>
+        </p>
+    </fieldset>
+  
+  <% end %>
+  </form>
+  <p>Company ID: <%= @login.company_id %></p>
+
+  <% if @failed %>
+    <div id="login_error">
+      <div>
+      <% if @user and @user.locked_out? %>
+        <p>Your account has been locked out as a result of too many failed login attempts.</p>
+      
+        <!--p>Please contact <a href="http://support.attainresponse.com/">customer support</a>.</p-->
+      <% else %>
+        <p>The log in information you entered was incorrect. Double check your email and password and verify that CAPS LOCK is not on, and then try again.</p>
+        <br>
+        <% if @user != nil %>
+          <!--p>Did you forget your password? <a href="/tracker_app/send_pass/<%= @user.id %>">Send me my password</a>.</p-->
+        <% end %>
+      
+        <!--p>If you cannot remember your email please contact ?.</p-->
+      <% end %>
+      </div>
+    </div>
+  <% end %>
+        <p align=center><a href="/tracker_app/password_recovery">Password Recovery form</a></p><br>
+
+            </div>
+
+

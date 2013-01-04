@@ -1,0 +1,18 @@
+development: &default
+  debug: true
+  feature_set: 1
+  failed_login_lockout: 10
+  welcome_message_default: 
+    <p>Welcome to ...</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;Welcome Info...</p>
+    <p>&nbsp;</p>
+  security_questions:
+    - What is your mother's maiden name?
+    - Who was your best friend in high school?
+    - What is your favorite book?
+    - Where where you born?
+production:
+  <<: *default
+  debug: false
+  feature_set: 1

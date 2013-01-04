@@ -1,0 +1,26 @@
+<%# title "Add New Client" %>
+<h3>New Client</h3>
+
+  <div class="maskc2">
+    <div class="colleftc2">
+	    	  
+	    <div class="col1c2" align=left>
+                     <!-- right -->
+
+<div id="client_details" >
+  <% myUpdatePath = "/main/clients/create" %>
+  <%= form_for @client, :url => myUpdatePath do |f| %>
+    <%= base_errors(@client) %>
+    <%= render 'fields', :f => f %>
+  <% end %>
+</div>
+	    </div>
+	    <div class="col2c2" align=left>
+                     <!-- left &nbsp;-->
+                     <%= render "help_text" %>
+
+	    </div> 
+	</div>
+    
+  </div>
+<p><%#= @client %></p>

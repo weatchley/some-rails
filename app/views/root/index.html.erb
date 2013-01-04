@@ -1,0 +1,8 @@
+<h1>Test</h1>
+
+<p><%= @company_id %></p>
+<% if @user == nil %>
+  <a href='login' >Login</a>
+<% else %>
+  User: <%= @user %>
+<% end %>

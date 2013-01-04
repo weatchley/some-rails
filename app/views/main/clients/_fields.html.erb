@@ -1,0 +1,37 @@
+      <br>
+      <table border=0><tr><td align=left>
+      <%= f.hidden_field :company_id %>
+      <!--%= f.hidden_field :id %-->
+	    <p>Last Name: <%= f.text_field :last_name, :size=>40 %></p>
+          <%= field_messages @client, :last_name do %><% end %>
+	    <p>First Name: <%= f.text_field :first_name, :size=>40 %>
+          <%= field_messages @client, :first_name do %><% end %>
+	    <p>Middle Name: <%= f.text_field :middle_name, :size=>40 %>
+          <%= field_messages @client, :middle_name do %><% end %>
+        <p>Active: <%= f.check_box :active %></p>
+	    <p>Occupation: <%= f.text_field :occupation, :size=>40 %>
+          <%= field_messages @client, :occupation do %><% end %>
+	    <p>Email: <%= f.text_field :email, :size=>40 %>
+          <%= field_messages @client, :email do %><% end %>
+	    <p>Address: <%= f.text_field :address, :size=>40 %>
+          <%= field_messages @client, :address do %><% end %>
+	    <p>City: <%= f.text_field :city, :size=>40 %>
+          <%= field_messages @client, :city do %><% end %>
+	    <p>State: <%= f.text_field :state, :size=>40 %>
+          <%= field_messages @client, :state do %><% end %>
+	    <p>Zip: <%= f.text_field :zip, :size=>40 %>
+          <%= field_messages @client, :zip do %><% end %>
+	    <p>Phone: <%= f.text_field :phone, :size=>40 %>
+          <%= field_messages @client, :phone do %><% end %>
+	    <p>Cell: <%= f.text_field :cell, :size=>40 %>
+          <%= field_messages @client, :cell do %><% end %>
+	    <p>Fax: <%= f.text_field :fax, :size=>40 %>
+          <%= field_messages @client, :fax do %><% end %>
+	    <p>Last Seen: <%= f.text_field :last_seen, :size=>40 %>
+          <%= field_messages @client, :last_seen do %><% end %>
+      <%= f.hidden_field :location_id %>
+	    <p>Notes: <%= f.text_field :notes, :size=>40 %>
+          <%= field_messages @client, :notes do %><% end %>
+      
+      <br><br><p><%= f.submit %></p>
+      </td></tr></table>

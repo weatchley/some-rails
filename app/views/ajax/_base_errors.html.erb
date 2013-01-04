@@ -1,0 +1,28 @@
+<% if transaction_errors and (transaction_errors.count > 0) %>
+<div class="error message">
+  <h4>There was an error processing your transaction.</h4>
+  <ul>
+    <% transaction_errors.each do |e| %>
+    <li><%= e %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<% has_base_errors = (base_errors and (base_errors.count > 0)) %>
+<% if other_errors or has_base_errors %>
+<div class="error message">
+  <h4>Your submission contained errors.</h4>
+  
+  <% if has_base_errors %>
+  <ul>
+    <% base_errors.each do |e| %>
+    <li><%= e %></li>
+    <% end %>
+  </ul>
+  
+  <% if other_errors %><p>Additionally, your submission contained other errors which are indicated below.</p><% end %>
+  <% else other_errors %>
+  <p>Please scroll down and correct the errors indicated below.</p>
+  <% end %>
+</div>
+<% end %>

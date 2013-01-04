@@ -1,0 +1,14 @@
+<h1>Client List</h1>
+      <% if flash[:notice] %>
+          <div class="notice_box" style="color:red;">
+            <ul>
+              <li>
+                <%= flash[:notice] %>
+              </li>
+            </ul>
+            <br>
+          </div>
+      <% end %>
+<% @client_list.each do |client| %>
+  <a href="/main/clients/<%= client.id %>/edit">edit</a> - <a href="/main/clients/view/<%= client.id %>"><%= client %></a><br>
+<% end %>
